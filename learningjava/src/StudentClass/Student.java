@@ -9,10 +9,10 @@ class Student{
 	{
 		System.out.println("My name is "+name+".I am "+age+" years old");
 	}
-	void Hello(String name) {
-		String namemtd =name;
-		System.out.println(""+name+" says hello to "+namemtd);
-		//System.out.println(name+"says hello");
+	void Hello(String namemtd) {
+		//String namemtd =name;
+		//System.out.println(""+name+" says hello to "+namemtd);
+		System.out.println(namemtd+" says hello to " +name );
 	}
 	
 }
