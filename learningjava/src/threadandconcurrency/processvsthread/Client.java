@@ -3,7 +3,7 @@ package threadandconcurrency.processvsthread;
 import java.util.Date;
 
 public class Client  {
-	public static void main(String args[]) {
+	public static void main(String args[]) throws InterruptedException {
 
 		Worker w1= new Worker("download");
 		Worker w2= new Worker("compress");
@@ -17,7 +17,7 @@ public class Client  {
 		w3.run();
 		
 		long endTime=System.currentTimeMillis();
-		 System.out.println("Sequenct total time is "+(startTime-endTime)+" ms");
+		 System.out.println("Sequence total time is "+(startTime-endTime)+" ms");
 		 
 		 System.out.println("Concurrent run start");
 			long concurrentSartTime=System.currentTimeMillis();
@@ -27,7 +27,11 @@ public class Client  {
 		Thread t3 = new Thread(new Worker("upload"));
 		t1.start();
 		t2.start();
-		t3.start();
+		t3.start();// till here threads were switching their tasks and results were not consistent to fix this we can use join()
+		
+		t1.join();
+		t2.join();
+		t3.join();
 		
 		long concurrentEndTime=System.currentTimeMillis();
 		 System.out.println("Concurrent total time is "+(concurrentSartTime-concurrentEndTime)+" ms");
