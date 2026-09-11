@@ -1,0 +1,16 @@
+2. Prototype Pattern for Efficient Invoice Generation — MEDIUM
+
+Problem Statement
+
+You are tasked with creating an API for invoice generation and testing. Generating invoices from scratch by fetching data from a database is time-consuming, especially when creating a large number of invoices for testing. To optimize the testing process, you decide to implement the Prototype pattern to create prototype invoice objects and efficiently clone them as needed.
+
+Instructions
+
+1. Define the ObjectClonable interface
+    Create an interface named ObjectClonable with a single method clone() that returns a cloned copy of the implementing object.
+2. Implement the invoice object
+    Implement the Invoice class with attributes: invoiceId, customerName, amount, dueDate, and invoiceType. Ensure it implements ObjectClonable and provides a proper clone() method.
+3. Define the InvoicePrototypeRegistry interface
+    Create an interface InvoicePrototypeRegistry with methods to add prototypes, retrieve prototypes by type, and clone invoice objects.
+4. Create the registry implementation
+    Implement a class that adheres to InvoicePrototypeRegistry. Manage a collection of invoice prototypes and provide methods to add, retrieve, and clone invoice objects.
