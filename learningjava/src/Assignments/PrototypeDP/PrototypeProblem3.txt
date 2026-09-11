@@ -1,0 +1,16 @@
+3. Prototype Pattern for Configuration Object Cloning — HARD
+
+Problem Statement
+
+You are developing a configuration management system that allows users to define and manage various configurations with different attributes. Creating new configurations with specific attributes is a frequent task during testing and development. Setting them up manually is time-consuming and error-prone. Implement the Prototype pattern to manage configuration objects and clone them when needed.
+
+Instructions
+
+1. Define the Configurable interface
+    Create an interface named Configurable with a single method clone() that returns a cloned copy of the implementing object.
+2. Implement the Configuration object
+    Implement the Configuration class with attributes: configId, configName, configValue, isEnabled, and type. Ensure it implements Configurable and provides a proper clone() method.
+3. Define the ConfigurationPrototypeRegistry interface
+    Create an interface ConfigurationPrototypeRegistry with methods to add prototypes, retrieve prototypes by type, and clone configuration objects.
+4. Create the registry implementation
+    Implement a class that adheres to ConfigurationPrototypeRegistry. Manage a collection of configuration prototypes and provide methods to add, retrieve, and clone configuration objects.
